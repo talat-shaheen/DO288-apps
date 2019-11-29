@@ -126,7 +126,8 @@ pipeline {
                 //TODO: Create a new app in stage using the books:stage image stream and expose the service
 		sh '''
 			 oc project ${STAGE_PROJECT}
-			 oc new-app --name books -i books:stage oc expose svc/${APP_NAME}
+			 oc new-app --name books -i books:stage
+			 oc expose svc/${APP_NAME}
 		 '''
             }
         }
