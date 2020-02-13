@@ -21,7 +21,7 @@ RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf
 # This stuff is needed to ensure a clean start
 RUN rm -rf /run/httpd && mkdir /run/httpd && \
     chgrp -R 0 /var/run/httpd /var/log/httpd && \
-    chmod -R g=0 /var/run/httpd /var/log/httpd
+    chmod -R g=u /var/run/httpd /var/log/httpd
 
 # Run as the root user
 #USER root
